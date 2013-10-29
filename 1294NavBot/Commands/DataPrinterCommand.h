@@ -8,7 +8,8 @@
  *
  * @author Matthew
  */
-class DataPrinterCommand: public CommandBase {
+class DataPrinterCommand: public CommandBase
+{
 public:
 	DataPrinterCommand();
 	virtual void Initialize();

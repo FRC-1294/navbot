@@ -51,7 +51,6 @@ inline double DriveSubsystem::GetSpeedRight()
 	return this->encR->GetRate();
 }
 
-
 inline double DriveSubsystem::GetPositionLeft()
 {
 	return this->encL->GetDistance();

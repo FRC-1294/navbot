@@ -3,6 +3,7 @@
 	<name>1294NavBot</name>
 	<comment></comment>
 	<projects>
+		<project>WPILib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

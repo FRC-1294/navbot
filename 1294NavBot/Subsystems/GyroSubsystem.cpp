@@ -9,7 +9,7 @@ GyroSubsystem::GyroSubsystem() :
 
 void GyroSubsystem::InitDefaultCommand()
 {
-	
+
 }
 
 void GyroSubsystem::ResetAngle()

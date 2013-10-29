@@ -8,7 +8,8 @@
  *
  * @author Matthew
  */
-class TankDriveCommand: public CommandBase {
+class TankDriveCommand: public CommandBase
+{
 public:
 	TankDriveCommand();
 	virtual void Initialize();

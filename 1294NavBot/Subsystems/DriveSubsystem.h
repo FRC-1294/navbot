@@ -15,7 +15,7 @@ private:
 	Encoder* encL, *encR;
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	
+
 public:
 	DriveSubsystem();
 	void InitDefaultCommand();

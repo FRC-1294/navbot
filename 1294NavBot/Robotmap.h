@@ -32,5 +32,9 @@
 #define ENCODER_ENCODE_MODE Encoder::k2X
 
 #define GYRO_ANALOG_CHANNEL 1
+#define GYRO_MAX_BOT_ROTATION_RATE 180
+
+#define JOYSTICK_LEFT 1
+#define JOYSTICK_RIGHT 2
 
 #endif

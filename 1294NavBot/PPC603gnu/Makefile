@@ -54,7 +54,7 @@ LIBS =
 
 IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
 
-IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
+IDE_LIBRARIES = 
 
 IDE_DEFINES = 
 
@@ -102,7 +102,7 @@ CommandBasedRobotTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Librarian =
 CommandBasedRobotTemplate/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
 CommandBasedRobotTemplate/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
-CommandBasedRobotTemplate/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
+CommandBasedRobotTemplate/$(MODE_DIR)/% : IDE_LIBRARIES = 
 CommandBasedRobotTemplate/$(MODE_DIR)/% : IDE_DEFINES = 
 CommandBasedRobotTemplate/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 CommandBasedRobotTemplate/$(MODE_DIR)/% : DEFINES = 
@@ -147,7 +147,7 @@ CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian =
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib -I$(WIND_BASE)/target/h/wrn/coreip 
-CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
+CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = 
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : IDE_DEFINES = 
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/% : DEFINES = 
@@ -178,6 +178,10 @@ CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/T
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveGyroStabCommand.o : $(PRJ_ROOT_DIR)/Commands/TankDriveGyroStabCommand.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/OI.o : $(PRJ_ROOT_DIR)/OI.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -194,6 +198,7 @@ OBJECTS_CommandBasedRobotTemplate_partialImage = CommandBasedRobotTemplate_parti
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/CommandBasedRobot.o \
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/DataPrinterCommand.o \
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveCommand.o \
+	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveGyroStabCommand.o \
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/OI.o \
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/DriveSubsystem.o \
 	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/GyroSubsystem.o
@@ -211,8 +216,8 @@ CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/CommandBasedRobotTemplate_par
 force : 
 
 DEP_FILES := CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/CommandBase.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/CommandBasedRobot.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/DataPrinterCommand.d \
-	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveCommand.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/OI.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/DriveSubsystem.d \
-	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/GyroSubsystem.d
+	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveCommand.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Commands/TankDriveGyroStabCommand.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/OI.d \
+	 CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/DriveSubsystem.d CommandBasedRobotTemplate_partialImage/$(MODE_DIR)/Objects/1294NavBot/Subsystems/GyroSubsystem.d
 -include $(DEP_FILES)
 
 
