@@ -33,6 +33,7 @@ tmp/**/*
 .classpath
 .settings/
 .loadpath
+ctdt.c
 
 # External tool builders
 .externalToolBuilders/
