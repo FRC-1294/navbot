@@ -1,5 +1,6 @@
 # Compiled Output
 *.out
+PPC603gnu/
 
 # Compiled Object files
 *.slo
