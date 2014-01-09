@@ -17,6 +17,7 @@ private:
 		datacmd = new DataPrinterCommand();
 		lw = LiveWindow::GetInstance();
 		tankDrive = new TankDriveCommand();
+		
 	}
 
 	virtual void AutonomousInit()

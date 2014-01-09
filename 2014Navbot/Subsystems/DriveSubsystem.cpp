@@ -46,20 +46,36 @@ void DriveSubsystem::TankDrive(float l, float r)
 
 double DriveSubsystem::GetSpeedLeft()
 {
+#if ENABLE_ENCODERS
 	return this->encL->GetRate();
+#else
+	return 0;
+#endif
 }
 
 double DriveSubsystem::GetSpeedRight()
 {
+#if ENABLE_ENCODERS
 	return this->encR->GetRate();
+#else
+	return 0;
+#endif
 }
 
 double DriveSubsystem::GetPositionLeft()
 {
+#if ENABLE_ENCODERS
 	return this->encL->GetDistance();
+#else
+	return 0;
+#endif
 }
 
 double DriveSubsystem::GetPositionRight()
 {
+#if ENABLE_ENCODERS
 	return this->encR->GetDistance();
+#else
+	return 0;
+#endif
 }

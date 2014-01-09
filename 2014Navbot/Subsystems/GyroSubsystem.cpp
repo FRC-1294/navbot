@@ -31,7 +31,7 @@ float GyroSubsystem::GetRate()
 	return dA / dT;
 }
 
-inline double GyroSubsystem::GetPeriod()
+double GyroSubsystem::GetPeriod()
 {
 	double t = GetTime();
 	double dt = t - lastT;
