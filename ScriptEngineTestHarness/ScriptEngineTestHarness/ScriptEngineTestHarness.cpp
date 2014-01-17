@@ -8,23 +8,32 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	ScriptInterpreter* si = new ScriptInterpreter(	"0: funca();\n"
-													"0: loop 5\n"
-													"{\n"
-														"0: loop 5\n"
-														"{\n"
-															"2: funcb();\n"
-														"}\n"
-														"2: funcc();\n"
-													"}\n"
-													"2 : funcd();\n"
-													"0: return();\n");
+	ScriptInterpreter* si = new ScriptInterpreter("0: funca();\n"
+		"0: loop 5\n"
+		"{\n"
+		"0: loop 5\n"
+		"{\n"
+		"2: funcb();\n"
+		"}\n"
+		"8: funcc();\n"
+		"}\n"
+		"3 : funcd();\n"
+		"0: return();\n");
 
-	while (1)
+	auto t0 = GetTickCount64();
+
+	bool cont = false;
+
+	while (!cont)
 	{
-		time();
-		TIME_MSt	
-		si->tick();
+		auto t = GetTickCount64();
+		auto dt = t - t0;
+
+		//printf("%d\n", dt);
+		
+		Sleep(50);
+
+		cont = si->tick(((double)dt) / 1000);
 	}
 
 	return 0;

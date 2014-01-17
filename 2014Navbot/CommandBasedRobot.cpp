@@ -11,13 +11,15 @@ private:
 	LiveWindow *lw;
 	DataPrinterCommand* datacmd;
 
+	GyroSubsystem* gs;
+	
 	virtual void RobotInit()
 	{
 		CommandBase::init();
 		datacmd = new DataPrinterCommand();
 		lw = LiveWindow::GetInstance();
 		tankDrive = new TankDriveCommand();
-		
+		gs = new GyroSubsystem();
 	}
 
 	virtual void AutonomousInit()
@@ -48,6 +50,11 @@ private:
 
 	virtual void TestPeriodic()
 	{
+		float a = gs->GetAngle();
+		float da = gs->GetRate();
+		
+		printf("A: %3.3f\tdA:%3.3f\n", a, da);
+		
 		lw->Run();
 	}
 };

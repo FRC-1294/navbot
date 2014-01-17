@@ -24,17 +24,5 @@ float GyroSubsystem::GetAngle()
 
 float GyroSubsystem::GetRate()
 {
-	double a = g->GetAngle();
-	double dT = this->GetPeriod();
-	double dA = a - lastA;
-	lastA = a;
-	return dA / dT;
-}
-
-double GyroSubsystem::GetPeriod()
-{
-	double t = GetTime();
-	double dt = t - lastT;
-	lastT = t;
-	return dt;
+	return g->GetRate();
 }

@@ -15,15 +15,15 @@ void DataPrinterCommand::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DataPrinterCommand::Execute()
 {
-	double l = drive->GetPositionLeft();
-	double r = drive->GetPositionRight();
-	double dl = drive->GetSpeedLeft();
-	double dr = drive->GetSpeedRight();
+	//double l = drive->GetPositionLeft();
+	//double r = drive->GetPositionRight();
+	//double dl = drive->GetSpeedLeft();
+	//double dr = drive->GetSpeedRight();
 	
 	float a = gyro->GetAngle();
 	float da = gyro->GetRate();
 	
-	printf("Data: L: %3.3f\tR: %3.3f\tdL: %3.3f\tdR: %3.3f\tA: %3.3f\tdA:%3.3f\n", l, r, dl, dr, a, da);
+	printf("A: %3.3f\tdA:%3.3f\n", a, da);
 }
 
 // Make this return true when this Command no longer needs to run execute()

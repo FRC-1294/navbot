@@ -15,7 +15,7 @@ public:
 	{
 		this->name = name;
 	}
-	void exec()
+	virtual void exec()
 	{
 		printf("%s called\n", this->name);
 	}
@@ -32,10 +32,12 @@ class ScriptInterpreter
 
 public:
 	std::vector<kvp*>* handlers;
-	void tick(double elapsedTime);
+	bool tick(double elapsedTime);
 
 	ScriptInterpreter(const char* str)
 	{
+		handlers = new std::vector<kvp*>();
+		current = NULL;
 		this->tokens = fileparse::parseCompletely(str);
 		std::list<FileParseToken*>* tokens2 = ScriptInterpreter::unrollLoops(tokens);
 		delete this->tokens;
