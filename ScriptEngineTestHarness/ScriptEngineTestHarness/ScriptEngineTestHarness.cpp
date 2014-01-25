@@ -6,8 +6,57 @@
 #include <Windows.h>
 #include <time.h>
 
+union MechDriveResult
+{
+	struct fr
+	{
+		float FrontLeft, RearLeft, FrontRight, RearRight;
+	} f;
+	float vals[4];
+};
+
+#define FABS(x) (x < 0 ? -x : x)
+
+void NormalizeVector(MechDriveResult* v, float m)
+{
+	float max = m;
+
+	for (int i = 0; i < 4; i++)
+	{
+		float f = FABS(v->vals[i]);
+
+		if (f > max)
+		{
+			max = f;
+		}
+	}
+
+	float ratio = m / max;
+
+	for (int i = 0; i < 4; i++)
+	{
+		v->vals[i] = v->vals[i] * ratio;
+	}
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
+	MechDriveResult* m = (MechDriveResult*)malloc(sizeof(MechDriveResult));
+
+	NormalizeVector(m, 1.0);
+
+
+
+
+
+
+
+
+
+
+
+
+
 	ScriptInterpreter* si = new ScriptInterpreter("0: funca();\n"
 		"0: loop 5\n"
 		"{\n"

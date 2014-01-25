@@ -11,7 +11,8 @@
 class MecanumDriveBaseCommand: public CommandBase
 {
 private:
-	RobotDrive* d;
+	//RobotDrive* d;
+	CANJaguar *frontLeft, *rearLeft, *frontRight, *rearRight;
 public:
 	MecanumDriveBaseCommand();
 	virtual void Initialize();
