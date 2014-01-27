@@ -1,7 +1,7 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/PrintAllInputCommand.h"
-#include "Commands/MecanumDriveBaseCommand.h"
+#include "Commands/Drive/MecanumDriveBaseCommand.h"
 #include "CommandBase.h"
 
 class CommandBasedRobot: public IterativeRobot

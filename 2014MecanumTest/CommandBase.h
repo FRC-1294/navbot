@@ -2,7 +2,8 @@
 #define COMMAND_BASE_H
 
 #include "Commands/Command.h"
-#include "Subsystems/MecanumDriveSubsystem.h"
+#include "Subsystems/Drive/MecanumDriveSubsystem.h"
+#include "Subsystems/Drive/GyroSubsystem.h"
 #include "OI.h"
 
 /**
@@ -17,6 +18,7 @@ public:
 	static void init();
 	// Create a single static instance of all of your subsystems
 	static MecanumDriveSubsystem* mecanumDrive;
+	static GyroSubsystem* gyro;
 	static OI *oi;
 };
 

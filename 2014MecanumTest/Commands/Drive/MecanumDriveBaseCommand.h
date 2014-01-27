@@ -1,7 +1,7 @@
 #ifndef MECANUMDRIVEBASECOMMAND_H
 #define MECANUMDRIVEBASECOMMAND_H
 
-#include "../CommandBase.h"
+#include "../../CommandBase.h"
 
 /**
  *
@@ -10,9 +10,6 @@
  */
 class MecanumDriveBaseCommand: public CommandBase
 {
-private:
-	//RobotDrive* d;
-	CANJaguar *frontLeft, *rearLeft, *frontRight, *rearRight;
 public:
 	MecanumDriveBaseCommand();
 	virtual void Initialize();
