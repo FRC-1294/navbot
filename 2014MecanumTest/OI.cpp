@@ -61,7 +61,7 @@ float OI::GetTranslateY()
 
 float OI::GetRotate()
 {
-	return dz(this->xbox->GetAxis((Joystick::AxisType)JOYSTICK_XBOX_AXIS_ROT));
+	return -dz(this->xbox->GetAxis((Joystick::AxisType)JOYSTICK_XBOX_AXIS_ROT));
 }
 
 void OI::PrintInputs()

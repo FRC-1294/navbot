@@ -48,7 +48,7 @@ MechDriveResult* MecanumCalc::ComputeMechanum(float x, float y, float r,
 	// so that we translate with respect to the field instead of the
 	// front of the robot.
 	RotateVector(&xIn, &yIn, rv);
-
+	
 	res->f_mech.FrontLeft = xIn + yIn + r;
 	res->f_mech.FrontRight = -xIn + yIn - r;
 	res->f_mech.RearLeft = -xIn + yIn + r;

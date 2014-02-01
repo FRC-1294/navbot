@@ -23,14 +23,20 @@ inline float fpow(float base, int power)
 	case 2:
 		x *= base;
 	case 1:
-		return x;
+		break;
 	default:
 		for (int i = 1; i < power; i++)
 		{
 			x *= base;
 		}
-		return x;
 	}
+	
+	if(base < 0 && power % 2 == 0)
+	{
+		return -x;
+	}
+	
+	return x;
 }
 
 // Called repeatedly when this Command is scheduled to run
